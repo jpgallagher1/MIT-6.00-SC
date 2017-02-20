@@ -1,0 +1,25 @@
+#Problem Set 1
+#Name: John Gallagher
+#Collaborators: None
+#Time Spend: TBD
+###MIT OpenCourseWare
+#6.00SC Introduction to Computer Science and Programming
+out_b = float(input("Enter your outstanding balance: "))
+annl_IR = float(input("Enter you annual interest rate: "))
+min_pmt_rt = float (input("Enter you minimum monthly payment rate: "))
+mimon_pmt = 0
+Int_pd = 0
+prin_pd = 0
+tot_pd = 0
+print("You have " + str(out_b) + " in starting debt.")
+for mon in range (1,13):
+  print ("Month " + str(mon))
+  mimon_pmt = out_b*min_pmt_rt
+  Int_pd = out_b*annl_IR/12
+  prin_pd = mimon_pmt - Int_pd
+  tot_pd = tot_pd + mimon_pmt
+  out_b = out_b - prin_pd
+  print("Minimum Monthly Payment: " + str(round(mimon_pmt,2)))
+  print("Principle paid: " + str(round(prin_pd,2)))
+  print("Outstanding balance: " + str(round(out_b,2)))
+print("RESULT")print("Total amount paid: " + str(round(tot_pd,2)))print("Remaining balance: " + str(round(out_b,2)))
